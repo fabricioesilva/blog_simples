@@ -1,0 +1,12 @@
+<p class="lead">
+    {% if variacao.desconto_var %}
+    <span id="variation-preco" class="lead product-price">
+        {{ variacao.preco_descontado|formata_preco }}
+    </span>
+    <span id="variation-preco-promocional" class="lead product-old-price text-muted">
+        {{ variacao.preco|formata_preco }}</span>
+    {% else %}    
+    <span id="variation-preco" class="lead product-price">
+        {{ variacao.preco|formata_preco}} </span>
+    {% endif %}
+</p>

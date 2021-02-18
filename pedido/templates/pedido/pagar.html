@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block titulo%}Pagamento | {%endblock%}
+{% block conteudo %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg">
+            <h3>Finalizar pedido</h3>
+        </div>
+    </div>
+
+    {% include 'parciais/_detalhepedido.html' %}
+
+    <div class="row mt-4">
+        <div class="col-lg">
+            <h4>Escolha o método de pagamento desejado</h4>
+            <p>(Adicionar métodos de pagamento disponíveis.)</p>
+            <p>(Adicionar métodos de pagamento disponíveis.)</p>
+            <p>(Adicionar métodos de pagamento disponíveis.)</p>
+            <p>(Adicionar métodos de pagamento disponíveis.)</p>
+            <a href="#" class="btn btn-primary btn-block btn-lg">Pagar</a>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,164 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/templates/shop-homepage)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+/*
+
+TODO O CSS COPIADO DO PROFESSOR L.O.MIRANDA ESTÁ A SEGUIR
+
+*/
+.product-price-block {
+  font-size: 1.5rem;
+}
+
+.product-price {
+  font-size: 1.5rem;
+}
+
+.product-old-price {
+  text-decoration: line-through;
+  font-size: 1rem;
+}
+
+.border-top-light-custom{
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+@media (min-width: 34em) {
+  .card-columns {
+      -webkit-column-count: 2;
+      -moz-column-count: 2;
+      column-count: 2;
+  }
+}
+
+@media (min-width: 62em) {
+  .card-columns {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+  }
+}
+
+ul.errorlist  {
+  list-style-type: none;
+  margin: 5px 0;
+  padding: 0;
+  font-size: 13px;
+  color: red;
+  display: block;
+}
+
+ul.errorlist li {
+  display: block;
+  font-weight: bold;
+}
+
+/*
+@media (min-width: 48em) {
+  .card-columns {
+      -webkit-column-count: 3;
+      -moz-column-count: 3;
+      column-count: 3;
+  }
+}
+
+
+@media (min-width: 62em) {
+  .card-columns {
+      -webkit-column-count: 4;
+      -moz-column-count: 4;
+      column-count: 4;
+  }
+}
+
+@media (min-width: 75em) {
+  .card-columns {
+      -webkit-column-count: 5;
+      -moz-column-count: 5;
+      column-count: 5;
+  }
+}
+*/
+.form-group textarea {
+  width: 100%;
+}
+.nav-cart, .nav-cart a {
+  color: #fff;
+  text-decoration: none;
+}
+.cart-img {
+  max-width: 150px;
+}
+
+.single {
+  padding: 30px 15px;
+  margin-top: 40px;
+  background: #fcfcfc;
+  border: 1px solid #f0f0f0; }
+  .single h3.side-title {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 0;
+  font-size: 20px;
+  color: #333;
+  text-transform: uppercase; }
+  .single h3.side-title:after {
+  content: '';
+  width: 80px;
+  height: 1px;
+  background: #ff173c;
+  display: block;
+  margin-top: 6px; }
+  
+  .single ul {
+  margin-bottom: 0; }
+  .single li a {
+  color: #666;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f0f0f0;
+  line-height: 40px;
+  display: block;
+  text-decoration: none; }
+  .single li a:hover {
+  color: #ff173c; }
+  .single li:last-child a {
+  border-bottom: 0; }
+
+  .single2 {
+    background:#fcfcfc;
+    
+    margin-bottom: 10px;
+    height: 40px;
+    border-bottom: 1px solid #f0f0f0; }
+
+  .single3 li {
+  padding: 5px 5px;
+  color: #666;
+  font-size: 14px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-style: italic;
+  }
+  .single3 li h4{
+    font-size: 20px;
+    color: #333;
+    font-style: italic;
+    text-transform: uppercase;
+    display: inline;
+  }  
+  .single3 li a {
+  color: #666;
+  font-size: 14px;
+  text-decoration: none;
+  }
+  .single3 li a:hover {
+    color: #ff173c; }

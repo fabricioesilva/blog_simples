@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load my_filters %}
+{% load static %}
+
+{% block titulo%}Meu carrinho | {%endblock%}
+{% block conteudo %}
+{% if carrinho %}
+<main class="container mt-4 mb-4">
+    <div class="row mt-3">
+        <div class="col">
+            <h3>Carrinho de compras</h3>
+            <p class="lead">Os produtos, quantidades e preços que você escolheu.</p>
+
+            <div class="table-responsive">
+                <table class="table">
+                    <tr>
+                        <th class="d-none d-lg-block">Imagem</th>
+                        <th>Produto</th>
+                        <th>V.</th>
+                        <th>QTD.</th>
+                        <th>Total</th>
+                    </tr>
+
+                    {% for produto in carrinho.values %}
+                    <tr>
+                        <td class="d-none d-lg-block">
+                            <img class="cart-img" style="max-width: 150px"
+                                src="{% get_media_prefix %}{{ produto.imagem }}">
+                        </td>
+                        <td>
+                            <a class="ml-3" href="{% url 'produto:detalhes' produto.slug %}">
+                                {{ produto.produto_nome }}
+                            </a>
+                            <a class="ml-3" href="{% url 'produto:removerdocarrinho' %}?vid={{ produto.variacao_id }}">
+                                <i class="fas fa-times-circle text-danger" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                        <td>{{ produto.variacao_nome }}</td>
+                        <td>{{ produto.quantidade }} x
+                            {% if produto.preco_unitario_descontado %}
+                            {{ produto.preco_unitario_descontado|formata_preco }}
+                            {% else %}
+                            {{ produto.preco_unitario|formata_preco }}
+                            {% endif %}
+                        </td>
+                        {% if produto.preco_quantitativo_descontado %}
+                        <td>{{ produto.preco_quantitativo_descontado|formata_preco }}</td>
+                        {% else %}
+                        <td>{{ produto.preco_quantitativo|formata_preco}}</td>
+                        {% endif %}
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td>* frete a combinar</td>
+                        <td class="font-weight-bold">Total a pagar </td>
+                        <td class="font-weight-bold">{{ carrinho|calc_total_compra|formata_preco }}</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-3">
+        <div class="col-lg mt-auto">
+            <div class='table-responsive'>
+                <table class="table">
+                    <tr>
+                        <td><a class="btn btn-lg btn-block btn-primary" href="{% url 'produto:index' %}">
+                                Escolher mais produtos
+                            </a>
+                        </td>
+                        <td><a class="btn btn-lg btn-block btn-primary" href="{% url 'produto:resumodacompra' %}">
+                                Finalizar a compra
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+{% else %}
+{% include 'parciais/_carrinhovazio.html' %}
+{% endif %}
+{% endblock %}

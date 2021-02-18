@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <title>{% block titulo %}{%endblock%} Compra.Com Bootstrap Template</title>
+
+  {% include 'parciais/_head.html'%}
+
+</head>
+
+<body>
+ <!-- Navigation -->
+    {% include 'parciais/_nav.html' %}
+ 
+  <div class="container">
+    {% include 'parciais/_messages.html'%}
+  </div>
+  {% block conteudo %} {% endblock %}
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    {% include 'parciais/_footer.html'%}
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js'%}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'custom/js/scripts.js'%}"></script>
+
+</body>
+
+</html>
